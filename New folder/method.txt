@@ -1,0 +1,28 @@
+@Override
+    public TasksHistory getProcessTimeline(String proInstId) {
+        HistoricTasksResPojo runningHistory = null;
+        try {
+            runningHistory = httpService.postReq("/enterprise/historic-tasks/query",
+                    new HistoricTasksReqPojo(proInstId, "created-asc", false), HistoricTasksResPojo.class);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+        List<TaskTimeLine> timeLineRunning = runningHistory.getData().stream().map(m -> new TaskTimeLine(m, "running"))
+                .collect(Collectors.toList());
+
+        HistoricTasksResPojo completedHistory = null;
+        try {
+            completedHistory = httpService.postReq("/enterprise/historic-tasks/query",
+                    new HistoricTasksReqPojo(proInstId, "created-asc", true), HistoricTasksResPojo.class);
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+        List<TaskTimeLine> timeLineCompleted = completedHistory.getData().stream()
+                .map(m -> new TaskTimeLine(m, "completed")).collect(Collectors.toList());
+
+        List<TaskTimeLine> timeLine = new ArrayList<>();
+        timeLine.addAll(timeLineCompleted);
+        timeLine.addAll(timeLineRunning);
+
+        return new TasksHistory(timeLine);
+    }
