@@ -55,4 +55,53 @@ where STATE_TASK_ID =1000035021;
  --'29-MAR-24 10.48.52.443000000 AM'
  
  select * from CHANGE_PROPOSAL_TASK_HISTORY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ #Alfresco DB connection
+spring.db1.datasource.jdbcUrl=jdbc:postgresql://localhost:5432/activiti
+spring.db1.datasource.username=alfresco
+spring.db1.datasource.password=alfresco
+
+#postgres DB connection
+spring.db2.datasource.jdbcUrl=jdbc:postgresql://localhost:5435/postger-dev
+spring.db2.datasource.username=alfresco
+spring.db2.datasource.password=alfresco
+
+#JPA-ORM properties
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.driver_class=org.postgresql.Driver
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.generate-ddl=true
+spring.jpa.show-sql=true
+spring.sql.init.mode=always
+spring.jpa.defer-datasource-initialization=true
+
+spring.jpa.properties.jakarta.persistence.query.timeout=5000
  
