@@ -1,3 +1,16 @@
+select * from ACT_HI_PROCINST where NAME_ = '607f0cfa-8da2-411a-8218-4ae13c08c5dd';
+
+select START_TIME_,DUE_DATE_ from ACT_HI_TASKINST 
+where PROC_INST_ID_ = (select proc_inst_id_ from ACT_HI_PROCINST
+where NAME_ = '607f0cfa-8da2-411a-8218-4ae13c08c5dd')
+and END_TIME_ is null;
+
+select CREATE_TIME_,DUE_DATE_ from ACT_RU_TASK where PROC_INST_ID_ = (select proc_inst_id_ from ACT_HI_PROCINST
+where NAME_ = '607f0cfa-8da2-411a-8218-4ae13c08c5dd')
+; 
+--------------------------------------------------
+
+
 select * from ACT_HI_TASKINST 
 where PROC_INST_ID_ = (select proc_inst_id_ from ACT_HI_PROCINST
 where NAME_ = '607f0cfa-8da2-411a-8218-4ae13c08c5dd')
