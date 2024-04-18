@@ -1,107 +1,232 @@
-select * from ACT_HI_PROCINST where NAME_ = '607f0cfa-8da2-411a-8218-4ae13c08c5dd';
+nnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-AdminTaskTimer] WARN  com.mchange.v2.async.ThreadPoolAsynchronousRunner  - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@15a4ecd -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!
+04:27:00 [C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-AdminTaskTimer] WARN  com.mchange.v2.async.ThreadPoolAsynchronousRunner  - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@15a4ecd -- APPARENT DEADLOCK!!! Complete Status:
+        Managed Threads: 3
+        Active Threads: 3
+        Active Tasks:
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@7f24b3af
+                        on thread: C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-HelperThread-#0
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@6531fe3b
+                        on thread: C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-HelperThread-#1
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@2e8f45e2
+                        on thread: C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-HelperThread-#2
+        Pending Tasks:
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@4e7c6a98
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@149f0133
+Pool thread stack traces:
+        Thread[C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-HelperThread-#0,5,main]
+                java.base@11.0.22/sun.nio.ch.Net.connect0(Native Method)
+                java.base@11.0.22/sun.nio.ch.Net.connect(Net.java:483)
+                java.base@11.0.22/sun.nio.ch.Net.connect(Net.java:472)
+                java.base@11.0.22/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:692)
+                java.base@11.0.22/java.nio.channels.SocketChannel.open(SocketChannel.java:194)
+                oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+                oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+                oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:380)
+                oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:303)
+                oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:265)
+                oracle.net.nt.ConnOption.connect(ConnOption.java:229)
+                oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:814)
+                oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:555)
+                oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:565)
+                oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:937)
+                oracle.net.ns.NSProtocol.connect(NSProtocol.java:346)
+                oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1967)
+                oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:640)
+                oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1032)
+                oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+                oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:681)
+                oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:602)
+                com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+                com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+                com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+                com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+                com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1176)
+                com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1163)
+                com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1908)
+                com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+        Thread[C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-HelperThread-#1,5,main]
+                java.base@11.0.22/sun.nio.ch.Net.connect0(Native Method)
+                java.base@11.0.22/sun.nio.ch.Net.connect(Net.java:483)
+                java.base@11.0.22/sun.nio.ch.Net.connect(Net.java:472)
+                java.base@11.0.22/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:692)
+                java.base@11.0.22/java.nio.channels.SocketChannel.open(SocketChannel.java:194)
+                oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+                oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+                oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:380)
+                oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:303)
+                oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:265)
+                oracle.net.nt.ConnOption.connect(ConnOption.java:229)
+                oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:814)
+                oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:555)
+                oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:565)
+                oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:937)
+                oracle.net.ns.NSProtocol.connect(NSProtocol.java:346)
+                oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1967)
+                oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:640)
+                oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1032)
+                oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+                oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:681)
+                oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:602)
+                com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+                com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+                com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+                com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+                com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1176)
+                com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1163)
+                com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1908)
+                com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+        Thread[C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-HelperThread-#2,5,main]
+                java.base@11.0.22/sun.nio.ch.Net.connect0(Native Method)
+                java.base@11.0.22/sun.nio.ch.Net.connect(Net.java:483)
+                java.base@11.0.22/sun.nio.ch.Net.connect(Net.java:472)
+                java.base@11.0.22/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:692)
+                java.base@11.0.22/java.nio.channels.SocketChannel.open(SocketChannel.java:194)
+                oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+                oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+                oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:380)
+                oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:303)
+                oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:265)
+                oracle.net.nt.ConnOption.connect(ConnOption.java:229)
+                oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:814)
+                oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:555)
+                oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:565)
+                oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:937)
+                oracle.net.ns.NSProtocol.connect(NSProtocol.java:346)
+                oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1967)
+                oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:640)
+                oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1032)
+                oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+                oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:681)
+                oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:602)
+                com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+                com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+                com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+                com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+                com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1176)
+                com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1163)
+                com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1908)
+                com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
 
-select START_TIME_,DUE_DATE_ from ACT_HI_TASKINST 
-where PROC_INST_ID_ = (select proc_inst_id_ from ACT_HI_PROCINST
-where NAME_ = '607f0cfa-8da2-411a-8218-4ae13c08c5dd')
-and END_TIME_ is null;
+04:28:15 [C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-AdminTaskTimer] WARN  com.mchange.v2.async.ThreadPoolAsynchronousRunner  - Task com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@7f24b3af (in deadlocked PoolThread) failed to complete in maximum time 60000ms. Trying interrupt().
+04:28:15 [C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-AdminTaskTimer] WARN  com.mchange.v2.async.ThreadPoolAsynchronousRunner  - Task com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@6531fe3b (in deadlocked PoolThread) failed to complete in maximum time 60000ms. Trying interrupt().
+04:28:15 [C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-AdminTaskTimer] WARN  com.mchange.v2.async.ThreadPoolAsynchronousRunner  - Task com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@2e8f45e2 (in deadlocked PoolThread) failed to complete in maximum time 60000ms. Trying interrupt().
+04:31:30 [C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-AdminTaskTimer] WARN  com.mchange.v2.async.ThreadPoolAsynchronousRunner  - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@15a4ecd -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!
+04:31:30 [C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-AdminTaskTimer] WARN  com.mchange.v2.async.ThreadPoolAsynchronousRunner  - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@15a4ecd -- APPARENT DEADLOCK!!! Complete Status:
+        Managed Threads: 3
+        Active Threads: 3
+        Active Tasks:
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@7cdc36e5
+                        on thread: C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-HelperThread-#1
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@3cbba9fd
+                        on thread: C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-HelperThread-#2
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@17489d3a
+                        on thread: C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-HelperThread-#0
+        Pending Tasks:
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@d269612
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@10d0e24d
+Pool thread stack traces:
+        Thread[C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-HelperThread-#1,5,main]
+                java.base@11.0.22/sun.nio.ch.Net.connect0(Native Method)
+                java.base@11.0.22/sun.nio.ch.Net.connect(Net.java:483)
+                java.base@11.0.22/sun.nio.ch.Net.connect(Net.java:472)
+                java.base@11.0.22/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:692)
+                java.base@11.0.22/java.nio.channels.SocketChannel.open(SocketChannel.java:194)
+                oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+                oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+                oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:380)
+                oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:303)
+                oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:265)
+                oracle.net.nt.ConnOption.connect(ConnOption.java:229)
+                oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:814)
+                oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:555)
+                oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:565)
+                oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:937)
+                oracle.net.ns.NSProtocol.connect(NSProtocol.java:346)
+                oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1967)
+                oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:640)
+                oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1032)
+                oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+                oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:681)
+                oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:602)
+                com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+                com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+                com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+                com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+                com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1176)
+                com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1163)
+                com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1908)
+                com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+        Thread[C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-HelperThread-#2,5,main]
+                java.base@11.0.22/sun.nio.ch.Net.connect0(Native Method)
+                java.base@11.0.22/sun.nio.ch.Net.connect(Net.java:483)
+                java.base@11.0.22/sun.nio.ch.Net.connect(Net.java:472)
+                java.base@11.0.22/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:692)
+                java.base@11.0.22/java.nio.channels.SocketChannel.open(SocketChannel.java:194)
+                oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+                oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+                oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:380)
+                oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:303)
+                oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:265)
+                oracle.net.nt.ConnOption.connect(ConnOption.java:229)
+                oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:814)
+                oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:555)
+                oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:565)
+                oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:937)
+                oracle.net.ns.NSProtocol.connect(NSProtocol.java:346)
+                oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1967)
+                oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:640)
+                oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1032)
+                oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+                oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:681)
+                oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:602)
+                com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+                com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+                com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+                com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+                com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1176)
+                com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1163)
+                com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1908)
+                com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+        Thread[C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-HelperThread-#0,5,main]
+                java.base@11.0.22/sun.nio.ch.Net.connect0(Native Method)
+                java.base@11.0.22/sun.nio.ch.Net.connect(Net.java:483)
+                java.base@11.0.22/sun.nio.ch.Net.connect(Net.java:472)
+                java.base@11.0.22/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:692)
+                java.base@11.0.22/java.nio.channels.SocketChannel.open(SocketChannel.java:194)
+                oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:184)
+                oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:158)
+                oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:380)
+                oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:303)
+                oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:265)
+                oracle.net.nt.ConnOption.connect(ConnOption.java:229)
+                oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:814)
+                oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:555)
+                oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:565)
+                oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:937)
+                oracle.net.ns.NSProtocol.connect(NSProtocol.java:346)
+                oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1967)
+                oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:640)
+                oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1032)
+                oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:90)
+                oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:681)
+                oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:602)
+                com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+                com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+                com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+                com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+                com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1176)
+                com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1163)
+                com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+                com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1908)
+                com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
 
-select CREATE_TIME_,DUE_DATE_ from ACT_RU_TASK where PROC_INST_ID_ = (select proc_inst_id_ from ACT_HI_PROCINST
-where NAME_ = '607f0cfa-8da2-411a-8218-4ae13c08c5dd')
-; 
---------------------------------------------------
+04:32:30 [C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-AdminTaskTimer] WARN  com.mchange.v2.async.ThreadPoolAsynchronousRunner  - Task com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@7cdc36e5 (in deadlocked PoolThread) failed to complete in maximum time 60000ms. Trying interrupt().
+04:32:30 [C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-AdminTaskTimer] WARN  com.mchange.v2.async.ThreadPoolAsynchronousRunner  - Task com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@3cbba9fd (in deadlocked PoolThread) failed to complete in maximum time 60000ms. Trying interrupt().
+04:32:30 [C3P0PooledConnectionPoolManager[identityToken->2zqbe0b21v5l3gg18ukgc2|5a20452e]-AdminTaskTimer] WARN  com.mchange.v2.async.ThreadPoolAsynchronousRunner  - Task com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@17489d3a (in deadlocked PoolThread) failed to complete in maximum time 60000ms. Trying interrupt().
+04:32:34 [pool-1-thread-1] WARN  com.activiti.service.ActivitiEndpointLicenseService  - Error while calling Activiti endpoint: Activiti app - assuming valid license: internal-cpcwms22-prod-WmsInternalSrvELB-337932776.us-east-1.elb.amazonaws.com: Name or service not known
 
-
-select * from ACT_HI_TASKINST 
-where PROC_INST_ID_ = (select proc_inst_id_ from ACT_HI_PROCINST
-where NAME_ = '607f0cfa-8da2-411a-8218-4ae13c08c5dd')
-and END_TIME_ is null;
-
-select * from ACT_HI_PROCINST
-where NAME_ = '607f0cfa-8da2-411a-8218-4ae13c08c5dd';
-update ACT_HI_PROCINST set START_time_ = '15-MAR-24 10.43.55.970000000 AM' 
-where PROC_INST_ID_ = '2200660';
-
---pro start time 15-MAR-24 10.43.55.970000000 AM
---13-APR-24 07.43.16.586000000 AM
---13-APR-24 07.43.21.243000000 AM
---27-APR-24 07.43.21.243000000 AM
-update ACT_HI_TASKINST set 
-START_TIME_ = '15-MAR-24 10.48.52.443000000 AM',DUE_DATE_ ='29-MAR-24 10.48.52.443000000 AM'
-where ID_ = 2206684;
-
-
-select * from ACT_RU_TASK where PROC_INST_ID_ = (select proc_inst_id_ from ACT_HI_PROCINST
-where NAME_ = '607f0cfa-8da2-411a-8218-4ae13c08c5dd')
-;
-
-update ACT_RU_TASK set 
-CREATE_TIME_ = '15-MAR-24 10.48.52.443000000 AM',DUE_DATE_ ='29-MAR-24 10.48.52.443000000 AM'
-where ID_ = 2206684;
-
-
-
-------------------
-
-
-select * from CHANGE_PROPOSAL_STATE_TASK where FK_CHANGE_PROPOSAL_ID = (
-select CHANGE_PROPOSAL_ID from CHANGE_PROPOSAL where GUID_ID='607f0cfa8da2411a82184ae13c08c5dd'
-);
-
-update CHANGE_PROPOSAL_STATE_TASK 
-set TASK_START_TS = '15-MAR-24 10.48.52.443000000 AM', TASK_DUE_TS='29-MAR-24 10.48.52.443000000 AM'
-where STATE_TASK_ID =1000035021;
-
- --'15-MAR-24 10.48.52.443000000 AM',
- --'29-MAR-24 10.48.52.443000000 AM'
- 
- select * from CHANGE_PROPOSAL_TASK_HISTORY
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- #Alfresco DB connection
-spring.db1.datasource.jdbcUrl=jdbc:postgresql://localhost:5432/activiti
-spring.db1.datasource.username=alfresco
-spring.db1.datasource.password=alfresco
-
-#postgres DB connection
-spring.db2.datasource.jdbcUrl=jdbc:postgresql://localhost:5435/postger-dev
-spring.db2.datasource.username=alfresco
-spring.db2.datasource.password=alfresco
-
-#JPA-ORM properties
-spring.jpa.hibernate.ddl-auto=update
-spring.datasource.driver_class=org.postgresql.Driver
-spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
-spring.jpa.generate-ddl=true
-spring.jpa.show-sql=true
-spring.sql.init.mode=always
-spring.jpa.defer-datasource-initialization=true
-
-spring.jpa.properties.jakarta.persistence.query.timeout=5000
- 
