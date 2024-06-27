@@ -1,12 +1,5 @@
-"update ACT_RU_TASK set "
-			+ "CREATE_TIME_ = (select CREATE_TIME_ from ACT_RU_TASK where  PROC_INST_ID_=:oldProcInstid), "
-			+ "DUE_DATE_ = (select DUE_DATE_ from ACT_RU_TASK where  PROC_INST_ID_=:oldProcInstid) "
-			+ "where PROC_INST_ID_ = :newProcInstid"
-
-
------
-
-
-"update CHANGE_PROPOSAL_STATE_TASK set TASK_START_TS = :startDate, TASK_DUE_TS=:dueDate "
-			+ " where FK_CHANGE_PROPOSAL_ID = "
-			+ "( select CHANGE_PROPOSAL_ID from CHANGE_PROPOSAL where GUID_ID=:guid )"
+"update CHANGE_PROPOSAL_TASK_HISTORY set task_id =:newTaskId where task_id=:oldTaskId and CHANGE_PROPOSAL_GUID_ID=:guid )"
+"update WAT_WR_ACTUAL_DAYS_WORKED set task_id =:newTaskId where task_id=:oldTaskId and FK_CHANGE_PROPOSAL_GUID=:guid )"
+"update WAT_WR_EXEMPT_DAY set task_id =:newTaskId where task_id=:oldTaskId"
+"update WAT_WR_OUT_OF_OFFICE set task_id =:newTaskId where task_id=:oldTaskId"
+"update WF_SME_CONSULT set WORKFLOW_TASK_INSTANCE_ID =:newTaskId where WORKFLOW_TASK_INSTANCE_ID=:oldTaskId and FK_CHANGE_PROPOSAL_GUID=:guid )"
